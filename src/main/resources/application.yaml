@@ -1,0 +1,21 @@
+spring:
+# 配置数据源信息
+  datasource:
+  # 配置数据源类型
+    type: com.zaxxer.hikari.HikariDataSource
+    # 配置连接数据库信息
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis_plus?serverTimezone=GMT%2B8&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl  # 日志功能
+  global-config:
+    db-config:
+      table-prefix: t_  # 设置所有操作表的默认前缀
+#      id-type: assign_id  # 使用雪花算法
+#      id-type: auto  # 使用数据库自增策略,数据库要设置了自增
+  type-aliases-package: com.company.mybatisplus.pojo  # 配置类型别名对应的包
+  type-enums-package: com.company.mybatisplus.enums
